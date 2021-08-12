@@ -6,7 +6,7 @@ public class SistemaAgendamento {
 
 	public static void main(String[] args) {
 		Scanner leitor = new Scanner(System.in);
-		String[] agendamentos = new String[QUANTIDADE_AGENDAMENTOS];
+		String[] agendamentos = new String[10];
 		int opcao = 0;
 		String usuario, senha;
 		System.out.println("Para entrar no sistema você deve informar seu usuário e sua senha");
@@ -31,9 +31,14 @@ public class SistemaAgendamento {
 			switch(opcao) {
 			case 1:
 				//Digitar todos os 10 horários de agendamento disponíveis para o dia
-				
+				String horarioDigitado;
+				for (int i=0;i<agendamentos.length;i++) {
+					System.out.println("Digite o horario");
+					horarioDigitado = leitor.next();
+					FuncoesAgendamento.inserirHorario(agendamentos, horarioDigitado);
+				}
 				//Dentro do loop que solicita a digitação de cada horário, chamar a seguinte função para cada horário digitado
-				FuncoesAgendamento.inserirHorario(agendamentos, horarioDigitado);
+				
 				break;
 				
 			case 2:
