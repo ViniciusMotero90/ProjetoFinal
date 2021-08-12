@@ -3,7 +3,8 @@ package entregadores;
 import java.util.Scanner;
 
 public class SistemaEntregadores {
-
+	
+	static int QUANTIDADE_ENTREGADORES = 20;
 	public static void main(String[] args) {
 		Scanner leitor = new Scanner(System.in);
 		String[] nomesEntregadores = new String[QUANTIDADE_ENTREGADORES];
@@ -30,8 +31,11 @@ public class SistemaEntregadores {
 			FuncoesEntregadores.exibirMenu();
 			opcao = leitor.nextInt();
 			
+			String novaAvaliacao;
 			switch(opcao) {
 			case 1:
+				String novoNome;
+				String novoTelefone;
 				//Cadastrar os 20 entregadores da plataforma, pela funcao.
 				//Dentro do loop que solicita a digitação dos dados de cada entregador, chamar a funcao abaixo
 				FuncoesEntregadores.cadastrarEntregador(nomesEntregadores, telefonesEntregadores, avaliacoesEntregadores, novoNome, novoTelefone, novaAvaliacao);
